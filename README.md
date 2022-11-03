@@ -23,6 +23,7 @@ Some of the features I will implement in the future:
 1. Node.js, npm, MySQL Workbench, Visual Studio Code should be installed and set up
 2. npm start to start the program in Visual Studio Code
 3. Database should be created in MySQL Workbench ("./application/conf/csc317db .sql")
+4. http://localhost:3000/
 
 
 
