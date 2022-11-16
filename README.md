@@ -1,6 +1,6 @@
 # README.md
 
-# Photo APP Website - PICS
+# Photo APP Website - PicX
 ![image](https://user-images.githubusercontent.com/89435466/199633229-40cc557c-42fe-43fa-89ce-07f71e645ca6.png)
 
 
