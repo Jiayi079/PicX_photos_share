@@ -18,12 +18,17 @@ Some of the features I will implement in the future:
     - Website's logo need to be set up(link to the home page)
     - Post detail page: after click the submit comment, whole page need to be refreshed automatically
     - Post detail page: comment's time need to be update become exactly time, mins, and seconds
-        
+
+# Teammember:
+- Kaijie Shao   email: kshao3@dons.usfca.edu
+- Jiayi Gu      email: jgu3@mail.sfsu.edu
+
 # Install and Run the Project
 1. Node.js, npm, MySQL Workbench, Visual Studio Code should be installed and set up
 2. npm start to start the program in Visual Studio Code
 3. Database should be created in MySQL Workbench ("./application/conf/csc317db .sql")
 4. http://localhost:3000/
+
 
 
 
