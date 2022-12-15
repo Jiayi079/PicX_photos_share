@@ -3,9 +3,9 @@ const PostModel = {};
 
 
 
-PostModel.create = (title, description, photopath, thumbnail, fk_userId) =>{
-    let baseSQL = 'INSERT INTO posts (title, description, photopath, thumbnail, created, fk_userId) VALUE (?, ? , ?, ?, now(), ?);;';
-        return db.execute(baseSQL,[title, description, photopath, thumbnail, fk_userId])
+PostModel.create = (title, description, photopath, thumbnail, fk_userId,active,created) =>{
+    let baseSQL = 'INSERT INTO posts (title, description, photopath, thumbnail,active, created, fk_userId) VALUE (?,?,?,?,?,now(),?);';
+        return db.execute(baseSQL,[title, description, photopath, thumbnail,active, fk_userId])
         .then(([results, fields])=>{
             return Promise.resolve(results && results.affectedRows);
         })

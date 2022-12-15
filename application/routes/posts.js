@@ -29,6 +29,8 @@ router.post('/createPost', uploader.single("image"), (req, res, next) => {
     let title = req.body.title;
     let description = req.body.description;
     let fk_userId = req.session.userId;
+    let active=1;
+    let created=Date.now();
 
     /**
      * do server validation on your own
@@ -45,7 +47,7 @@ router.post('/createPost', uploader.single("image"), (req, res, next) => {
      .then(() =>{
         //  let baseSQL = 'INSERT INTO posts (title, description, photopath, thumbnail, created, fk_userId) VALUE(?,?,?,?, now(),?);;';
         //  return db.execute(baseSQL, [title, description, fileUploaded, destinationOfThumbnail, fk_userId]);
-        return PostModel.create(title, description, fileUploaded, destinationOfThumbnail, fk_userId);
+        return PostModel.create(title, description, fileUploaded, destinationOfThumbnail, fk_userId, active,created);
      })
      .then((postWasCreated)=>{
         if(postWasCreated){

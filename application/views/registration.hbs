@@ -1,40 +1,45 @@
-{{!-- <!DOCTYPE html>
+{{!--
+<!DOCTYPE html>
 <html lang="en">
- --}}
+--}}
 
-{{!-- <link rel="stylesheet" type="text/css" href="../public/js/registration.js"> --}}
+{{!--
+<link rel="stylesheet" type="text/css" href="../public/js/registration.js"> --}}
 
 
 <body>
-<section>
-    <header class="grid-container">
-        <h1>Registration Form</h1>
-    </header>
-    <form class="form-grid-reg" id="myForm" method="POST" action="/users/registration" 
-    enctype="application/x-www-form-urlencoded">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Enter Username..."
-        required name="username">
-        <div class="error" id="errUsername"></div>
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="Enter Email..." >
-        <div class="error" id="errEmail"></div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Enter Password..." >
-        <div class="error" id="errPwd"></div>
-        <label for="cPassword">Confirm password</label>
-        <input type="password" name="cPassword" id="cPassword" placeholder="Confirm Password..." >
-        <div class="error" id="errCPwd"></div>
+    <section class="main-content">
+        <div class="form-container">
+            <form class="form-grid-reg" id="myForm" method="POST" action="/users/registration"
+                enctype="application/x-www-form-urlencoded">
+                <h2 class="main-heading">Registration</h2>
 
-        <label class="long" for="over13ys">
-            <input type="checkbox" name="over13ys" id="over13ys" required>
-            I am 13 years of age or older</label>
-        <label class="long" for="privicyrule">
-            <input type="checkbox" name="privicyrule" id="privicyrule" required>
-            I accept <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Rules</a></label>
-        <div class="error" id="errChecks"></div>
-        <button type="submit" id="submitBtn">submit</button>
-    </form>
-</section>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter Username..." required
+                    name="username">
+                <div class="error" id="errUsername"></div>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter Email...">
+                <div class="error" id="errEmail"></div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password...">
+                <div class="error" id="errPwd"></div>
+                <label for="cPassword">Confirm password</label>
+                <input type="password" name="cPassword" id="cPassword" placeholder="Confirm Password...">
+                <div class="error" id="errCPwd"></div>
+
+                <label class="long" for="over13ys">
+                    <input type="checkbox" name="over13ys" id="over13ys" required>
+                    I am 13 years of age or older</label>
+                <br>
+                <label class="long" for="privicyrule">
+                    <input type="checkbox" name="privicyrule" id="privicyrule" required>
+                    I accept <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Rules</a></label>
+                <div class="error" id="errChecks"></div>
+                <button type="submit" id="submitBtn">submit</button>
+            </form>
+        </div>
+    </section>
 </body>
+
 </html>

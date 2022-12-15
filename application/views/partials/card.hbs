@@ -1,8 +1,9 @@
-<div id="post-{{id}}" class ="card">
-    <img class = "card-image" src="{{thumbnail}}" alt="Missing Image">
-    <div class = "card-body">
-        <p class = "card-title">{{title}}</p>
-        <p class= "card-description">{{description}}</p>
-        <a href="/post/{{id}}" class = "anchor-buttons">Post Details</a>
+<div id="post-{{id}}" class="card">
+    <div class="card-cover" style="background-image: url({{thumbnail}});">
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">{{title}}</h3>
+        <p class="card-description">{{description}}</p>
+        <a href="/post/{{id}}" class="post-detail-link">See Details >></a>
     </div>
 </div>

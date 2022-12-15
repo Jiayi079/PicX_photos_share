@@ -1,42 +1,48 @@
-<div id = "post-container">
-    <div id = "info">
-        <header id = "image-post-title">
-            <h2 id ="image-post-title-text">{{currentPost.title}}</h2>
-        </header>
-        </br>
-        <div id = "image-post-author" class = "info-tags">{{currentPost.username}}</div>
-        </br>
-        <div id = "image-post-date" class = "info-tags">{{currentPost.created}}</div>
-        </br>
-        <div id = "image-post-desc" class = "info-tags">{{currentPost.description}}</div>
-            <img id ="image-post-image" src = "/{{currentPost.photopath}}">
-    </div>
-    <div id="comment-container">
-        <div id = "comment-box">
-            <textarea id = "comment-box-text" rows="4" cols="50" placeholder="Enter Comment Here"></textarea>
-            <button id= "comment-box-botton">Submit</button>
-            {{!-- <button id= "comment-box-botton"><i class="fa fa-comment" >Submit</i></button> --}}
+<div class="main-content">
+    <div class="wrapper">
+        <div class="post-detail-wrapper">
+            <div class="pd-image-container">
+                <img class="pd-image" src="/{{currentPost.photopath}}">
+            </div>
+            <div class="post-content">
+                <div class="post-meta">
+                    <p class="pd-user">@{{currentPost.username}}</p>
+                    <h2 class="pd-title">{{currentPost.title}}</h2>
+                    <p class="pd-description">{{currentPost.description}}</p>
+                    <p class="pd-date">{{currentPost.created}}</p>
+                </div>
+                <div class="comment-container">
+                    <div>
+                        {{#each currentPost.comments}}
+                        {{> comments this}}
+                        {{/each}}
+                    </div>
+                    <div id="comment-box" class="comment-box">
+                        <textarea class="comment-box-text" id="comment-box-text" rows="4" cols="70"
+                            placeholder="Enter Comment Here"></textarea>
+                        <button class="comment-box-botton" id="comment-box-botton">Submit</button>
+                        {{!-- <button id="comment-box-botton"><i class="fa fa-comment">Submit</i></button> --}}
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-        <div id = "messages-">
-            {{#each currentPost.comments}}
-            {{> comments this}}
-            {{/each}}
-        </div>
     </div>
 </div>
 
 
 <script>
-    document.addEventListener('DOMContentLoaded',(event) =>{
+    document.addEventListener('DOMContentLoaded', (event) => {
         document.querySelectorAll('span[class=date-posted]').forEach((postedDate) => {
             postedDate.textContent = new Date(postedDate.textContent).toLocaleDateString();
         });
     });
 
-    function addMessage(data){
+    function addMessage(data) {
         let template = document.createElement('template');
-        template.innerHTML = 
+        template.innerHTML =
             `<div id="message-{${data.commentId}">
                 <strong class="author-text"> @${data.username} </strong>
                 <span class="date-posted"> ${new Date().toLocaleDateString()}</span>
@@ -44,35 +50,35 @@
             </div>`;
         document.getElementById('messages').firstChild.before(template.content.firstChild);
     }
-    
+
     document.getElementById('comment-box-botton').onclick = (event) => {
         let commentText = document.getElementById('comment-box-text').value;
         let postId = document.location.pathname.match(/\d+/g).map(Number)[0];
 
-        if(!commentText){
+        if (!commentText) {
             return;
         }
 
         let fetchOptions = {
             method: "POST",
             headers: {
-                "Content-Type":"Application/json"
+                "Content-Type": "Application/json"
             },
             body: JSON.stringify({
-                comment:commentText,
-                postId,postId
+                comment: commentText,
+                postId, postId
             })
         }
         fetch('/comments/create', fetchOptions)
-        .then((response) => response.json())
-        .then((data) => {
-            if(data.code == 1){
-                addMessage(data);
-            }else{
-                addFlashFromFrontEnd(data.message, data.status);
-            }
-        })
-        .catch(err => console.log(err));
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.code == 1) {
+                    addMessage(data);
+                } else {
+                    addFlashFromFrontEnd(data.message, data.status);
+                }
+            })
+            .catch(err => console.log(err));
     }
-        
+
 </script>

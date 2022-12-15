@@ -1,27 +1,29 @@
 <body>
-    <section class="grid-container">
-        <header>
-            <h1>Post Image</h1>
-        </header>
-        <form id ='post-image' class = 'form-grid-postimage' method ="POST" enctype="multipart/form-data" 
-        action = '/posts/createPost'>
-            <label for="title">Post Title</label>
-            <input type="text" name="title" required>
-            <br>
-            <label for="description">Description</label>
-            <input type="text" name="description" required><br>
-            <br>
-            <label for="image">Image</label>
-            <br>
-            <input id="image" type="file" name="image" hidden required>
-			<label id="upload" for="image">Choose file</label>
-            <br>
-            <br>
-            <input type="radio" name="privicyrule" required>
-            <label for="privicyrule">Click if you accept Use Policy fo uploading images</label>
-            <br>
-            <br>
-            <button id="submit" type="submit">submit image post</button>
-        </form>
+    <section class="main-content">
+        <div class="form-container">
+            <form id='post-image' class='form-grid-postimage' method="POST" enctype="multipart/form-data"
+                action='/posts/createPost'>
+                <h2 class="main-heading">Create Post</h2>
+
+                <label for="title">Post Title</label>
+                <input type="text" name="title" required>
+                <br>
+                <label for="description">Description</label>
+                <input type="text" name="description" required><br>
+                <br>
+                <label for="image">Image</label>
+                <br>
+                <input id="image" type="file" name="image" hidden required>
+                <label id="upload" for="image">Choose file</label>
+                <br>
+                <br>
+                <input type="radio" name="privicyrule" required>
+                <label for="privicyrule">Click if you accept Use Policy fo uploading images</label>
+                <br>
+                <br>
+                <button id="submit" type="submit">submit image post</button>
+            </form>
+        </div>
+
     </section>
 </body>

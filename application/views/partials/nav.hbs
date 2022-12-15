@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav class="navbar">
+    <h5 class="brand-logo">PicX</h5>
 
-
-<body>
-    <nav>
-        <div class="heading">
-            <h5>Jiayi Gu's Photo App</h5>
-        </div>
-        <ul class="nav-search" action="action_page.php">
+    <ul id="nav-bar" class="nav-links">
+        <li> <a href="/" id="home">Home</a> </li>
+        <li> <a href="postimage" id="post-button">Create Post</a> </li>
+    </ul>
+    <div class="nav-right-content">
+        <div class="nav-search" action="action_page.php">
             <input id="search" type="text" placeholder="Search.." name="search">
             <button><i id="search-button" class="fa fa-search"></i></button>
-        </ul>
-        <ul id="nav-bar" class="nav-links">
-            <li> <a href="/" id="home">Home</a> </li> 
-            <li> <a href="postimage" id="post-button" class="nav-items anchor-buttons">Post</a> </li>
-            <li> <a href="registration" id="authenticate-button" class="nav-items anchor-buttons">Register</a> </li>
-
+        </div>
+        <ul class="auth-links">
             {{#if logged}}
-                <li><a class="submit" id = "logout-button" href = "/">Log out</a></li>
+            <li><a class="logout-link" id="logout-button" href="/">Log out</a></li>
             {{else}}
-                <li><a class="submit" id = "login-button" href="/login">Log in</a></li>
+            <li><a class="bordered-link" href="/login">Log in</a></li>
+            <li> <a class="filled-link" href="registration" id="authenticate-button">Register</a> </li>
             {{/if}}
-
         </ul>
+    </div>
 
-    </nav>
-</body>
-
-
-</html>
+</nav>

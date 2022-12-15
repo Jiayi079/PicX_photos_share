@@ -18,7 +18,7 @@ async function getConnection() {
     //TODO make sure to change to the user you want to use
     user: "root", //Your DB username
     //TODO make sure to change to the correct password for your user.
-    password: "0000", //Your DB password
+    password: "secure123", //Your DB password
   });
 }
 

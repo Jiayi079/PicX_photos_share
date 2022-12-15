@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{!-- <link rel="stylesheet" type="text/css" href="/application/public/css/home.css"> --}}
-    <link rel="stylesheet" type="text/css" href="../public/css/index.css">
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
-    <script type="text/javascript" defer src="/public/js/frontendjs.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    {{!-- <script defer src="/application/routes/registration.js"></script> --}}
-    {{!-- <link rel="stylesheet" type="text/css" href="/application/public/css/login_style.css">
-    <link rel="stylesheet" type="text/css" href="/application/public/css/postimage_style.css">
-    <link rel="stylesheet" type="text/css" href="/application/public/css/registration.css">
-    <link rel="stylesheet" type="text/css" href="/application/public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/application/public/css/viewpost.css"> --}}
-    <title>Home</title>
-  </head> 
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{!--
+  <link rel="stylesheet" type="text/css" href="/application/public/css/home.css"> --}}
+  <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+  <script type="text/javascript" defer src="/public/js/frontendjs.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  {{!--
+  <script defer src="/application/routes/registration.js"></script> --}}
+  {{!--
+  <link rel="stylesheet" type="text/css" href="/application/public/css/login_style.css">
+  <link rel="stylesheet" type="text/css" href="/application/public/css/postimage_style.css">
+  <link rel="stylesheet" type="text/css" href="/application/public/css/registration.css">
+  <link rel="stylesheet" type="text/css" href="/application/public/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/application/public/css/viewpost.css"> --}}
+  <title>Home</title>
+</head>
 
-    <div class="container">
-      {{log this}}
-      {{>nav}}
-      {{#if (emptyObject messages)}}
-        {{>flashmessage}}
-        {{/if}}
-      {{{body}}}
-      {{>footer}}
-    </div>
+<body>
 
-    {{#if logged}}
-      <script>
-        let ele = document.getElementById('logout-button');
-        if (ele) {
-            ele.onclick = (even) => {
-                fetch('/users/logout', {
-                    method: "POST"
-                   })
-                   .then((data) => {
-                        location.replace('/');
-                    })
-            }
-        }
-      </script>
+  <div class="container">
+    {{log this}}
+    {{>nav}}
+    {{#if (emptyObject messages)}}
+    {{>flashmessage}}
     {{/if}}
+    <div class="wrapper">
+      {{{body}}}
+    </div>
+  </div>
 
-  </body>
+  {{#if logged}}
+  <script>
+    let ele = document.getElementById('logout-button');
+    if (ele) {
+      ele.onclick = (even) => {
+        fetch('/users/logout', {
+          method: "POST"
+        })
+          .then((data) => {
+            location.replace('/');
+          })
+      }
+    }
+  </script>
+  {{/if}}
+</body>
+
+{{>footer}}
+
 </html>
-
