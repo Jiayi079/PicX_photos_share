@@ -1,7 +1,13 @@
 # README.md
 
 # Photo APP Website - PicX
-![image](https://user-images.githubusercontent.com/89435466/199633229-40cc557c-42fe-43fa-89ce-07f71e645ca6.png)
+![image](https://user-images.githubusercontent.com/89435466/207869024-298c307c-5955-442d-a3a4-a5d3cfc22477.png)
+![image](https://user-images.githubusercontent.com/89435466/207869484-45657994-66a5-44b1-9422-5e6dfe71ccd3.png)
+![image](https://user-images.githubusercontent.com/89435466/207869124-9da14edb-e86c-4265-aa03-a062f60a9152.png)
+![image](https://user-images.githubusercontent.com/89435466/207869171-c0ff98dd-b2a6-4c36-9797-a158fa5eafc6.png)
+![image](https://user-images.githubusercontent.com/89435466/207869231-47cd7ac0-83f5-400b-8519-10e29f119d2a.png)
+
+
 
 
 # Description:
